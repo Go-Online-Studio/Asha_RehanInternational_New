@@ -20,7 +20,19 @@ import { MessageCircle, Phone, ChevronUp } from 'lucide-react';
 import { getWhatsAppUrl } from './whatsapp';
 
 export default function App() {
-  const [activeView, setActiveView] = useState<ProjectView>('home');
+  const [activeView, setActiveView] = useState<ProjectView>(() => {
+    let path = window.location.pathname;
+    const base = import.meta.env.BASE_URL || '/';
+    if (path.startsWith(base)) {
+      path = path.slice(base.length);
+    } else if (path.startsWith('/')) {
+      path = path.slice(1);
+    }
+    if (path.endsWith('/')) path = path.slice(0, -1);
+    
+    const validViews = ['home', 'products-all', 'products-awnings', 'products-canopies', 'products-tensile', 'products-gazebos', 'about-profile', 'about-faqs', 'about-blogs', 'about-blog-post-1', 'about-blog-post-2', 'about-blog-post-3', 'contact', 'terms', 'privacy'];
+    return validViews.includes(path) ? (path as ProjectView) : 'home';
+  });
   const [isLoading, setIsLoading] = useState(true);
 
   // Sync WhatsApp dynamic routing state on browser resizing/changes
@@ -35,6 +47,46 @@ export default function App() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Listen for browser Back/Forward navigation to update view
+  useEffect(() => {
+    const handlePopState = () => {
+      let path = window.location.pathname;
+      const base = import.meta.env.BASE_URL || '/';
+      if (path.startsWith(base)) {
+        path = path.slice(base.length);
+      } else if (path.startsWith('/')) {
+        path = path.slice(1);
+      }
+      if (path.endsWith('/')) path = path.slice(0, -1);
+
+      const validViews = ['home', 'products-all', 'products-awnings', 'products-canopies', 'products-tensile', 'products-gazebos', 'about-profile', 'about-faqs', 'about-blogs', 'about-blog-post-1', 'about-blog-post-2', 'about-blog-post-3', 'contact', 'terms', 'privacy'];
+      if (validViews.includes(path)) {
+        setActiveView(path as ProjectView);
+      } else if (path === '') {
+        setActiveView('home');
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Update browser URL path when activeView changes
+  useEffect(() => {
+    let currentPath = window.location.pathname;
+    const base = import.meta.env.BASE_URL || '/';
+    if (currentPath.startsWith(base)) {
+      currentPath = currentPath.slice(base.length);
+    } else if (currentPath.startsWith('/')) {
+      currentPath = currentPath.slice(1);
+    }
+    if (currentPath.endsWith('/')) currentPath = currentPath.slice(0, -1);
+
+    if (currentPath !== activeView) {
+      const newPath = activeView === 'home' ? base : `${base}${activeView}`;
+      window.history.pushState(null, '', newPath);
+    }
+  }, [activeView]);
 
   // Set page Title according to active view state dynamically
   useEffect(() => {
