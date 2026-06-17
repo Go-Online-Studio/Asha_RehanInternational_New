@@ -110,10 +110,10 @@ export default function ContactView() {
             <div className="absolute top-0 left-0 w-2 h-full bg-brand-blue" />
             
             <div className="flex items-center justify-between mb-8 pb-4 border-b border-gray-200/40">
-              <span className="font-mono text-[10px] text-gray-400 uppercase tracking-widest">
+              <span className="font-mono text-[8px] sm:text-[10px] text-gray-400 uppercase tracking-widest">
                 DOC_ID // ESTIMATE_EST_2026
               </span>
-              <div className="flex items-center gap-1 text-[11px] font-mono text-[#17be74]">
+              <div className="flex items-center gap-1 text-[8px] sm:text-[10px] font-mono text-[#17be74]">
                 <span className="w-2 h-2 rounded-full bg-[#17be74] animate-pulse" />
                 <span>ONLINE PORTAL ACTIVE</span>
               </div>

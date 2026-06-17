@@ -41,7 +41,7 @@ export default function TermsView() {
           
           <section className="space-y-3">
             <h3 className="font-display font-bold text-xs text-brand-charcoal uppercase tracking-widest flex items-center gap-2">
-              <span className="text-brand-blue">01 //</span>
+              <span className="text-brand-blue shrink-0">01 //</span>
               AUTHENTIC DESIGN AGREEMENT & CAD INTELLECTUAL PROPERTY
             </h3>
             <p className="text-xs text-gray-500">
@@ -53,7 +53,7 @@ export default function TermsView() {
 
           <section className="space-y-3">
             <h3 className="font-display font-bold text-xs text-brand-charcoal uppercase tracking-widest flex items-center gap-2">
-              <span className="text-brand-blue">02 //</span>
+              <span className="text-brand-blue shrink-0">02 //</span>
               SITE READINESS AND STRUCTURAL INSTALLATION GUIDELINES
             </h3>
             <p className="text-xs text-gray-500">
@@ -65,7 +65,7 @@ export default function TermsView() {
 
           <section className="space-y-3">
             <h3 className="font-display font-bold text-xs text-brand-charcoal uppercase tracking-widest flex items-center gap-2">
-              <span className="text-brand-blue">03 //</span>
+              <span className="text-brand-blue shrink-0">03 //</span>
               ESTIMATIONS, PRICING, & PROCUREMENT PARAMETERS
             </h3>
             <p className="text-xs text-gray-500">
@@ -77,7 +77,7 @@ export default function TermsView() {
 
           <section className="space-y-3">
             <h3 className="font-display font-bold text-xs text-brand-charcoal uppercase tracking-widest flex items-center gap-2">
-              <span className="text-brand-blue">04 //</span>
+              <span className="text-brand-blue shrink-0">04 //</span>
               FORCE MAJEURE AND MONSOON RATED CONDITIONS
             </h3>
             <p className="text-xs text-gray-500">
