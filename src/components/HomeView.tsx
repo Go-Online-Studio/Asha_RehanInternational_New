@@ -153,7 +153,7 @@ export default function HomeView({ setView }: HomeViewProps) {
             {/* Massive Rotated Ghost Letter Background Layout */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
               <motion.div
-                className="font-display font-black text-[12vw] md:text-[18vw] text-black/[0.03] tracking-widest text-center uppercase"
+                className="font-display font-black text-[8vw] md:text-[10vw] text-black/[0.03] tracking-widest text-center uppercase"
                 initial={{ scale: 0.95, opacity: 0, y: 30 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 transition={{ duration: 1.2, ease: 'easeOut' }}
