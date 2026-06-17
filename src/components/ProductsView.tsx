@@ -79,7 +79,7 @@ export default function ProductsView({ currentView, setView }: ProductsViewProps
   const headerInfo = getSubPageTitleAndDesc();
 
   return (
-    <div id="products-view-canvas" className="w-full relative min-h-screen pt-24 lg:pt-32 pb-16 lg:pb-24 bg-[#F5F5F4]">
+    <div id="products-view-canvas" className="w-full relative min-h-screen pt-32 pb-16 lg:pb-24 bg-[#F5F5F4]">
       
       {/* Decorative vertical guide line */}
       <div className="absolute left-[8%] top-0 bottom-0 w-[1px] bg-brand-charcoal/5 pointer-events-none hidden lg:block" />
@@ -164,7 +164,7 @@ export default function ProductsView({ currentView, setView }: ProductsViewProps
                         <img
                           src={product.imageUrl}
                           alt={product.name}
-                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                           referrerPolicy="no-referrer"
                         />
                       </div>

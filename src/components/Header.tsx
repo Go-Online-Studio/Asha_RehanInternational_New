@@ -8,6 +8,7 @@ import { ProjectView } from '../types';
 import { COMP_INFO } from '../data';
 import { motion, AnimatePresence } from 'motion/react';
 import { Phone, Menu, X, ArrowUpRight, ShieldCheck, ChevronDown, Compass } from 'lucide-react';
+import ashaLogo from '../assets/images/asha-logo.webp';
 
 interface HeaderProps {
   currentView: ProjectView;
@@ -59,18 +60,9 @@ export default function Header({ currentView, setView }: HeaderProps) {
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-3 cursor-pointer select-none group"
           >
-            <div className="w-10 h-10 bg-[#2a6fdd] flex items-center justify-center relative transition-transform duration-500 group-hover:rotate-45">
-              <div className="w-4 h-4 border-2 border-white rotate-45"></div>
-            </div>
             
-            <div className="flex flex-col">
-              <span className="font-display text-lg font-extrabold tracking-tight text-[#1a1a1a] leading-none">
-                ASHA SMART <span className="text-[#2a6fdd]">SHADES</span>
-              </span>
-              <span className="font-mono text-[9px] text-[#2a6fdd] uppercase tracking-[0.2em] font-medium leading-[1.3]">
-                Architectural tension systems
-              </span>
-            </div>
+            <img className='BrandHeader h-14 w-auto object-contain' src={ashaLogo} alt="Asha Smart Shades" />
+
           </div>
 
           {/* Desktop Navigation Menus with Interactive Dropdowns */}

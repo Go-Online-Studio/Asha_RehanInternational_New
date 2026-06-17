@@ -166,7 +166,7 @@ export default function AboutView({ currentView, setView }: AboutViewProps) {
   const activeBlog = getFullBlogPostContent(currentView);
 
   return (
-    <div id="about-view-canvas" className="w-full relative min-h-screen pt-24 lg:pt-32 pb-16 lg:pb-24 bg-[#F5F5F4]">
+    <div id="about-view-canvas" className="w-full relative min-h-screen pt-32 pb-16 lg:pb-24 bg-[#F5F5F4]">
       
       {/* Decorative linear drafting grids */}
       <div className="absolute left-[8%] top-0 bottom-0 w-[1px] bg-brand-charcoal/5 pointer-events-none hidden lg:block" />
@@ -345,7 +345,7 @@ export default function AboutView({ currentView, setView }: AboutViewProps) {
                     <img
                       src={blog.imageUrl}
                       alt={blog.title}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="w-full h-full object-cover transition-all duration-500"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute top-4 left-4 bg-brand-charcoal text-white text-[9px] font-mono px-2 py-0.5 uppercase tracking-widest z-15">
@@ -428,7 +428,7 @@ export default function AboutView({ currentView, setView }: AboutViewProps) {
             <img
               src={activeBlog.imageUrl}
               alt={activeBlog.title}
-              className="w-full h-full object-cover grayscale"
+              className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
             {/* Geometric SVG frame overlay */}

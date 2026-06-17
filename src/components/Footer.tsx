@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { ProjectView } from '../types';
 import { COMP_INFO } from '../data';
 import { ShieldAlert, Compass, Mail, PhoneCall, MapPin, Calendar, Clock, SquareTerminal, Facebook, Instagram, Linkedin, Youtube, MessageCircle } from 'lucide-react';
+import ashaLogoFooter from '../assets/images/asha-logo_Footer.webp';
 import { getWhatsAppUrl } from '../whatsapp';
 
 interface FooterProps {
@@ -96,17 +97,7 @@ export default function Footer({ setView }: FooterProps) {
           {/* Logo & Manifesto Section */}
           <div className="lg:col-span-4 flex flex-col gap-6 items-center text-center lg:items-start lg:text-left">
             <div onClick={handleLogoClick} className="flex items-center gap-3 cursor-pointer group w-fit mx-auto lg:mx-0">
-              <div className="w-10 h-10 bg-[#2a6fdd] flex items-center justify-center relative transition-transform duration-500 group-hover:rotate-45">
-                <div className="w-4 h-4 border-2 border-white rotate-45"></div>
-              </div>
-              <div className="flex flex-col text-left">
-                <span className="font-display text-lg font-extrabold tracking-tight text-white leading-none">
-                  ASHA SMART <span className="text-[#2a6fdd]">SHADES</span>
-                </span>
-                <span className="font-mono text-[9px] text-[#2a6fdd] uppercase tracking-[0.2em] font-medium block mt-1">
-                  15+ Years Structural Design
-                </span>
-              </div>
+              <img className='BrandFooter h-20 w-auto object-contain' src={ashaLogoFooter} alt="Asha Smart Shades" />
             </div>
 
             <p className="font-sans text-xs text-gray-500 leading-relaxed max-w-sm mt-3 mx-auto lg:mx-0">

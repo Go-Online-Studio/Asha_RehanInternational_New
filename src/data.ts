@@ -4,6 +4,13 @@
  */
 
 import { SlideItem, ProductItem, FAQItem, BlogPostItem, StatItem } from './types';
+import banner1 from './assets/images/Banner1.webp';
+import banner2 from './assets/images/Banner2.webp';
+import banner3 from './assets/images/Banner3.webp';
+import Product1 from './assets/images/Product1.webp';
+import Product2 from './assets/images/Product2.webp';
+import Product3 from './assets/images/Product3.webp';
+import Product4 from './assets/images/Product4.webp';
 
 export const COMP_INFO = {
   name: 'Asha Smart Shades',
@@ -25,7 +32,7 @@ export const HERO_SLIDES: SlideItem[] = [
     title: 'Architectural Tensile Sails',
     subtitle: 'HYPERBOLIC STRUCTURAL ART',
     description: 'Bespoke high-performance tensile membrane architectures designed with fluid structural geometry, engineered to endure severe loads while delivering visual poetry.',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200',
+    imageUrl: banner1,
     accentText: 'FORM / TENSION / DEPTH',
   },
   {
@@ -34,7 +41,7 @@ export const HERO_SLIDES: SlideItem[] = [
     title: 'Precision Retractable Systems',
     subtitle: 'INTELLIGENT EXTERIOR SHADING',
     description: 'Motorized smart awnings that respond dynamically to weather elements. Italian style engineering combined with premium UV-resistant weatherproof canvases.',
-    imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1200',
+    imageUrl: banner2,
     accentText: 'GEOMETRIC AUTONOMY',
   },
   {
@@ -43,7 +50,7 @@ export const HERO_SLIDES: SlideItem[] = [
     title: 'Sculpted Glazed Canopies',
     subtitle: 'ENTRANCE ARCHITECTURES',
     description: 'High-end cantilevered shelters using custom structural grade steel, polycarbonate arches, or premium performance textiles to redefine reception facades.',
-    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200',
+    imageUrl: banner3,
     accentText: 'SPACE / SYMMETRY / FLOW',
   },
 ];
@@ -82,7 +89,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
     category: 'Awnings',
     tagline: 'Zero-tolerance horizontal projection systems',
     description: 'Designed as a sleek structural extension of premium residential concrete facades. Combines custom-machined internal gas-spring tension arms with high-strength forged aluminum arm brackets to maintain taut canvas lines at massive spans.',
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200',
+    imageUrl: Product1,
     features: [
       'Engineered Italian dual-cable internal gas stress arms rated for 80,000 tension cycles',
       'Integrated Somfy electronic motorization with autonomous wind & rain sensor relays',
@@ -103,7 +110,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
     category: 'Tensile',
     tagline: 'High-tension architectural membrane canvases',
     description: 'Engineered as highly functional sculpture. These hyperbolic paraboloid structures utilize tension-skewed support arches to suspend high-performance PTFE or PVC membranes, maximizing storage clearances without internal obstacle bracing.',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200',
+    imageUrl: Product2,
     features: [
       'Sleek structural single-pole cantilever arrays maximizing spatial clearance',
       'Mehler Texnologies dual-pass PVDF-coated PVC structural membranes',
@@ -124,7 +131,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
     category: 'Canopies',
     tagline: 'Modern cantilevered entrance shields',
     description: 'An elegant statement at your doorstep. Built using solid high-impact Bayer polycarbonate glazing or heavy woven composite polymers framed by cold-rolled architectural steel ribs. Prevents weathering while amplifying structural perspective.',
-    imageUrl: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200',
+    imageUrl: Product3,
     features: [
       'Impact-resistant polycarbonate shielding blocks 99% harmful ultraviolet Rays',
       'Precision concealed water drainage systems routing water into hidden ground columns',
@@ -145,7 +152,7 @@ export const PRODUCTS_DATA: ProductItem[] = [
     category: 'Gazebos & Umbrellas',
     tagline: 'Dynamic heavy duty hospitality umbrella systems',
     description: 'Engineered for luxury beach clubs, rooftop lounges, and premium residential poolside spaces. Features an offset high-gauge side support mast in architectural hardwoods or powder-finished steel with a fluid 360-degree rotation and micro-tilt control.',
-    imageUrl: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=1200',
+    imageUrl: Product4,
     features: [
       'Integrated gear-driven rotational base allows complete 360-degree area coverage',
       'Multi-axis infinite angular tilt lock positions for optimized shade tracking',

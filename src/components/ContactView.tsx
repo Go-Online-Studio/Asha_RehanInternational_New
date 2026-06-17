@@ -73,7 +73,7 @@ export default function ContactView() {
   };
 
   return (
-    <div id="contact-view-canvas" className="w-full relative min-h-screen pt-24 lg:pt-32 pb-16 lg:pb-24 bg-[#F5F5F4]">
+    <div id="contact-view-canvas" className="w-full relative min-h-screen pt-32 pb-16 lg:pb-24 bg-[#F5F5F4]">
       
       {/* Structural horizontal guidelines */}
       <div className="absolute left-[8%] top-0 bottom-0 w-[1px] bg-brand-charcoal/5 pointer-events-none hidden lg:block" />

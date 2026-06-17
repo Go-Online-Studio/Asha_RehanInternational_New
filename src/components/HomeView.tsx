@@ -8,6 +8,8 @@ import { SlideItem, ProjectView } from '../types';
 import { HERO_SLIDES, STATS, COMP_INFO } from '../data';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowLeft, ArrowRight, Shield, Award, Ruler, Compass, Sparkles, ChevronRight } from 'lucide-react';
+import aboutHomeBack from '../assets/images/aboutHomeBack.webp';
+import aboutHomeFront from '../assets/images/aboutHomeFront.webp';
 
 interface HomeViewProps {
   setView: (view: ProjectView) => void;
@@ -340,9 +342,9 @@ export default function HomeView({ setView }: HomeViewProps) {
             </div>
 
             {/* Backdrop Image - Unsplash Architectural Concrete */}
-            <div className="relative mt-[8%] ml-[8%] w-[75%] lg:w-[68%] aspect-[3/4] overflow-hidden grayscale opacity-75">
+            <div className="relative mt-[8%] w-[75%] lg:w-[80%] aspect-[3/4] overflow-hidden grayscale opacity-75">
               <img
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600"
+                src={aboutHomeBack}
                 alt="Contemporary Shade Architecture"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
@@ -352,7 +354,7 @@ export default function HomeView({ setView }: HomeViewProps) {
             {/* Foreground Overlapping Image - Shade details */}
             <div className="absolute bottom-[4%] right-4 w-[60%] aspect-[1/1] bg-white p-3 shadow-2xl border border-gray-100">
               <img
-                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600"
+                src={aboutHomeFront}
                 alt="Smart Awning Details"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -365,7 +367,7 @@ export default function HomeView({ setView }: HomeViewProps) {
             </div>
 
             {/* Floating statistical cards inside composition */}
-            <div className="absolute top-[40%] right-[3%] bg-brand-dark text-white p-5 border-l-4 border-[#17be74] shadow-xl max-w-[170px] hidden md:block">
+            <div className="absolute top-[40%] right-[3%] bg-brand-dark/80 text-white p-5 border-l-4 border-[#17be74] shadow-xl max-w-[170px] hidden md:block">
               <p className="font-mono text-[9px] text-[#17be74] uppercase tracking-widest mb-1">DESIGN CODE</p>
               <h5 className="font-display font-bold text-sm tracking-tight leading-snug">VADODARA METALS APPROVED</h5>
             </div>
