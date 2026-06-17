@@ -1,0 +1,6 @@
+{
+  "name": "Asha Smart Shades",
+  "description": "Premium architectural shade solutions provider, specializing in awnings, canopies, tensile structures, gazebos, and umbrellas. Designed with a Zaha Hadid aesthetic, magazine typography, and structural lines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

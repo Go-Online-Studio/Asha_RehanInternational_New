@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,450;1,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --color-brand-blue: #2a6fdd;
+  --color-brand-green: #17be74;
+  --color-brand-dark: #0b0301;
+  --color-brand-charcoal: #1a1a1a;
+  --color-brand-light: #F5F5F4;
+  --color-brand-gray: #bbbbbb;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom visual layers & high-end typography */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-light);
+  color: var(--color-brand-charcoal);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Luxury minimal scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-charcoal);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-blue);
+}
+
+/* Blueprint styling grids */
+.architectural-blueprint {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(26,26,26,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26,26,26,0.03) 1px, transparent 1px);
+}
+
+.architectural-radial-fade {
+  mask-image: radial-gradient(circle, black 40%, transparent 100%);
+}
+
+/* Custom text vertical rotation utility */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.writing-vertical-reverse {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Ghost background typography styling */
+.ghost-text {
+  font-size: 18vw;
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: rgba(26, 26, 26, 0.04);
+}
+
+.line-accent {
+  height: 1px;
+  background: rgba(26, 26, 26, 0.1);
+  flex-grow: 1;
+}
+
+.overlap-card {
+  box-shadow: 40px 40px 80px rgba(0, 0, 0, 0.08);
+}
+
+/* Custom selection styling */
+::selection {
+  background-color: var(--color-brand-blue);
+  color: #ffffff;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-blue);
+  outline-offset: 2px;
+}
+
+@keyframes draw-contour {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-contour 6s linear infinite;
+}
