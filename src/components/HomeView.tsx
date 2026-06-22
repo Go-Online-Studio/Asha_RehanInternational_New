@@ -165,7 +165,7 @@ export default function HomeView({ setView }: HomeViewProps) {
             </div>
 
             {/* Left Content Column */}
-            <div className="lg:col-span-6 flex flex-col justify-center relative z-10">
+            <div className="lg:col-span-6 flex flex-col justify-center relative z-10 order-2 lg:order-1">
               <motion.span
                 className="font-mono text-[10px] md:text-xs text-[#17be74] tracking-[0.3em] font-semibold uppercase block mb-4"
                 initial={{ x: -20, opacity: 0 }}
@@ -223,7 +223,7 @@ export default function HomeView({ setView }: HomeViewProps) {
               </motion.div>
 
               {/* Slider Meta coordinates */}
-              <div className="mt-12 mb-10 lg:mb-0  pt-6 border-t border-brand-charcoal/10 flex items-center justify-between text-[10px] font-mono text-brand-gray">
+              <div className="mt-12 mb-16 lg:mb-0  pt-6 border-t border-brand-charcoal/10 flex items-center justify-between text-[10px] font-mono text-brand-gray">
                 <div>
                   <span>SPEC ACCENT // </span>
                   <span className="text-brand-charcoal font-semibold">{currentItem.accentText}</span>
@@ -236,7 +236,7 @@ export default function HomeView({ setView }: HomeViewProps) {
             </div>
 
             {/* Right Overlapping Images Column */}
-            <div className="hidden lg:flex lg:col-span-6 relative items-center justify-center mt-6 lg:mt-0 min-h-[300px] md:min-h-[440px] z-10 p-4">
+            <div className="flex col-span-1 lg:col-span-6 relative items-center justify-center mt-2 lg:mt-0 min-h-[240px] sm:min-h-[320px] md:min-h-[380px] lg:min-h-[440px] z-10 p-4 order-1 lg:order-2">
               
               {/* Rotating Wireframe Overlay Grid */}
               <div className="absolute top-[10%] right-[10%] w-16 h-16 border border-brand-blue/30 flex items-center justify-center animate-spin-slow pointer-events-none hidden md:flex z-20">
@@ -246,7 +246,7 @@ export default function HomeView({ setView }: HomeViewProps) {
 
               {/* Swiveling Image Frame */}
               <motion.div
-                className="w-full max-w-[460px] aspect-[4/3] bg-white p-3 shadow-2xl relative overflow-hidden z-10"
+                className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[460px] aspect-[4/3] bg-white p-3 shadow-2xl relative overflow-hidden z-10"
                 initial={{ scale: 0.95, opacity: 0, rotate: -2 }}
                 animate={{ scale: 1, opacity: 1, rotate: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
@@ -271,18 +271,18 @@ export default function HomeView({ setView }: HomeViewProps) {
               </motion.div>
 
               {/* Decorative Offset Frame */}
-              <div className="absolute -top-2 right-2 w-full max-w-[460px] aspect-[4/3] border border-[#1a1a1a] pointer-events-none z-0 hidden md:block" />
+              <div className="absolute -top-2 right-2 w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[460px] aspect-[4/3] border border-[#1a1a1a] pointer-events-none z-0 hidden sm:block" />
 
               {/* Dynamic Offset overlay content layer */}
               <motion.div
-                className="absolute bottom-[8%] left-[5%] bg-white p-3 lg:p-6 overlap-card min-w-[200px] z-25 hidden md:block"
+                className="absolute bottom-[8%] left-[5%] bg-white p-3 lg:p-6 overlap-card min-w-[160px] sm:min-w-[200px] z-25"
                 initial={{ x: 30, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
               >
-                <div className="text-3xl font-display font-black text-[#2a6fdd] mb-0.5">15+</div>
+                <div className="text-2xl sm:text-3xl font-display font-black text-[#2a6fdd] mb-0.5">15+</div>
                 <div className="text-[10px] uppercase font-bold tracking-widest opacity-60">Years of Excellence</div>
-                <div className="mt-3 pt-3 border-t border-gray-100">
+                <div className="mt-3 pt-3 border-t border-gray-100 hidden sm:block">
                   <div className="text-[10px] leading-tight text-gray-400">Asha Smart Shades engineering team delivers durability with artistic intent.</div>
                 </div>
               </motion.div>
