@@ -11,6 +11,7 @@ import Product1 from './assets/images/Product1.webp';
 import Product2 from './assets/images/Product2.webp';
 import Product3 from './assets/images/Product3.webp';
 import Product4 from './assets/images/Product4.webp';
+import NewsBlog from './assets/images/NewsBlog.webp';
 
 export const COMP_INFO = {
   name: 'Asha Smart Shades',
@@ -199,7 +200,7 @@ export const BLOG_POSTS: BlogPostItem[] = [
     category: 'Engineering Design',
     date: 'May 12, 2026',
     snippet: 'Exploring how mathematical saddles distribute stress vectors evenly across modern PVC fabrics, reducing mast fatigue and creating striking visual lines.',
-    imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600',
+    imageUrl: NewsBlog,
     readTime: '6 min read',
   },
   {
@@ -208,7 +209,7 @@ export const BLOG_POSTS: BlogPostItem[] = [
     category: 'Home Automation',
     date: 'June 02, 2026',
     snippet: 'A complete step-by-step setup guide for configuring optical vibration and ultrasonic anemometer sensors to guard luxury retractable awnings from severe windstorms.',
-    imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=600',
+    imageUrl: NewsBlog,
     readTime: '4 min read',
   },
   {
@@ -217,7 +218,30 @@ export const BLOG_POSTS: BlogPostItem[] = [
     category: 'Material Science',
     date: 'June 14, 2026',
     snippet: 'Analyzing durability ratings, self-cleaning rates, solar heat gain coefficients, and light transmittance levels across premium architectural fabric composites.',
-    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600',
+    imageUrl: NewsBlog,
     readTime: '8 min read',
+  },
+];
+
+export const HOME_FAQS: FAQItem[] = [
+  {
+    id: 1,
+    question: 'What types of shading solutions do you offer?',
+    answer: 'At Asha Smart Shades, we offer a wide range of shading solutions including: Awnings: Retractable, Drop Arm, and Vertical Awnings. Canopies: Basket Canopies and Fixed Canopies. Fixed Structures: Walkways. Retract Systems: Pergoluxe, Klymate, and Sky Shades. Tensile Structures: Car Parking Tensile Structures, Conical Tents, Shade Sails, and Tensile Umbrellas. Gazebos & Umbrellas: Gazebos, Garden Umbrellas, Center Pole Umbrellas, and Side Pole Umbrellas.',
+  },
+  {
+    id: 2,
+    question: 'How can I choose the right shading solution for my needs?',
+    answer: 'Our team of experts will work closely with you to understand your specific needs and preferences. We offer personalized consultations to help you choose the most suitable shading solution based on your space, style, and budget.',
+  },
+  {
+    id: 3,
+    question: 'What materials are used in your shading products?',
+    answer: 'We use high-quality, durable materials that are designed to withstand harsh weather conditions and provide long-lasting protection. Our materials are UV-resistant, water-resistant, and come in a variety of colors and styles to match your aesthetic preferences.',
+  },
+  {
+    id: 4,
+    question: 'Do you provide installation services?',
+    answer: 'Yes, we provide professional installation services for all our shading products. Our experienced installation team ensures that your shading solution is installed correctly and efficiently, providing optimal performance and safety.',
   },
 ];

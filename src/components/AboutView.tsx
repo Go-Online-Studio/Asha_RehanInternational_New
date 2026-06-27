@@ -8,7 +8,6 @@ import { FAQS_DATA, BLOG_POSTS, COMP_INFO } from '../data';
 import { FAQItem, BlogPostItem, ProjectView } from '../types';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronDown, ShieldCheck, Compass, HelpCircle, BookOpen, ChevronLeft, Calendar, Clock, User, Award, ArrowUpRight } from 'lucide-react';
-
 interface AboutViewProps {
   currentView: ProjectView;
   setView: (view: ProjectView) => void;
@@ -93,7 +92,7 @@ export default function AboutView({ currentView, setView }: AboutViewProps) {
         return {
           title: 'The Science of Hyperbolic Paraboloids in Modern Tension Membranes',
           category: 'Engineering Design',
-          author: 'Vimal G., Chief Structural Architect',
+          author: 'Kartik G., Chief Structural Architect',
           date: 'May 12, 2026',
           time: '6 min read',
           imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200',

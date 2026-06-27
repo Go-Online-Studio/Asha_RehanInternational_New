@@ -5,15 +5,27 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { SlideItem, ProjectView } from '../types';
-import { HERO_SLIDES, STATS, COMP_INFO } from '../data';
+import { HERO_SLIDES, STATS, COMP_INFO, HOME_FAQS, BLOG_POSTS } from '../data';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowLeft, ArrowRight, Shield, Award, Ruler, Compass, Sparkles, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Shield, Award, Ruler, Compass, Sparkles, ChevronRight, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 import aboutHomeBack from '../assets/images/aboutHomeBack.webp';
 import aboutHomeFront from '../assets/images/aboutHomeFront.webp';
-
+import homeProductDesc1 from '../assets/images/homeProductDesc1.webp';
+import homeProductDesc2 from '../assets/images/homeProductDesc2.webp';
+import homeProductDesc3 from '../assets/images/homeProductDesc3.webp';
+import homeProductDesc4 from '../assets/images/homeProductDesc4.webp';
 interface HomeViewProps {
   setView: (view: ProjectView) => void;
 }
+
+// Dynamically import all partner logos from the Partners folder
+const partnerImages = Object.values(
+  import.meta.glob('../assets/images/Partners/*.{png,jpg,jpeg,svg,webp}', { eager: true, import: 'default' })
+) as string[];
 
 // Custom Counter Hook that increments when section enters viewport
 function AnimatedCounter({ value, target, isTriggered }: { value: string; target: number; isTriggered: boolean }) {
@@ -50,6 +62,9 @@ export default function HomeView({ setView }: HomeViewProps) {
   // Stats Ref to trigger counts on view
   const statsRef = useRef<HTMLDivElement>(null);
   const [statsViewed, setStatsViewed] = useState(false);
+  
+  // FAQ Accordion State
+  const [openFAQ, setOpenFAQ] = useState<number | null>(1);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -388,12 +403,8 @@ export default function HomeView({ setView }: HomeViewProps) {
               Engineering Tensegrity & Smart Shading Canopy Systems
             </h2>
 
-            <p className="font-sans text-xs md:text-sm text-gray-500 leading-relaxed mb-6">
-              For over 15 years, **Asha Smart Shades** has sat at the intersection of modern structural engineering and premium spatial luxury. We forge, sew, and tension custom shading solutions that defend against active climate extremes while expanding real-estate liveability.
-            </p>
-
-            <p className="font-sans text-xs text-gray-400 leading-relaxed mb-10">
-              Instead of relying on generic mass-manufactured plastics, our systems utilize premium structural carbon steel profiles, German engineering alloys, high-tension PVC coated membranes, and motorized assemblies connected to custom climatological sensor networks.
+            <p className="font-sans text-xs md:text-sm text-gray-500 leading-relaxed mb-10">
+              Welcome to Asha Smart Shades, your premier destination for innovative shading solutions in Vadodara, Gujarat, India. With a commitment to quality and customer satisfaction, we specialize in providing high-quality products that enhance the comfort and aesthetics of your outdoor spaces.
             </p>
 
             {/* Counter Grid Layout */}
@@ -463,9 +474,15 @@ export default function HomeView({ setView }: HomeViewProps) {
                   <span>SYS: CAT_01</span>
                   <span>[ AWNINGS ]</span>
                 </div>
-                <div className="w-12 h-12 border border-brand-charcoal/15 flex items-center justify-center mb-8 group-hover:border-brand-blue group-hover:bg-brand-blue/5 transition-colors">
-                  <Ruler size={16} className="text-brand-charcoal group-hover:text-brand-blue" />
+                <div className="relative overflow-hidden aspect-[4/3] mb-5 bg-white">
+                  <img 
+                    src={homeProductDesc1}
+                    alt="Retractable Custom Awnings" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
+
                 <h4 className="font-display font-extrabold text-lg text-brand-charcoal uppercase tracking-tight mb-3">
                   Retractable Custom Awnings
                 </h4>
@@ -490,8 +507,13 @@ export default function HomeView({ setView }: HomeViewProps) {
                   <span>SYS: CAT_02</span>
                   <span>[ TENSILE ]</span>
                 </div>
-                <div className="w-12 h-12 border border-brand-charcoal/15 flex items-center justify-center mb-8 group-hover:border-brand-green group-hover:bg-brand-green/5 transition-colors">
-                  <Compass size={16} className="text-brand-charcoal group-hover:text-[#17be74]" />
+                <div className="relative overflow-hidden aspect-[4/3] mb-5 bg-white">
+                  <img 
+                    src={homeProductDesc2}
+                    alt="Tensile Fabric Sails" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <h4 className="font-display font-extrabold text-lg text-brand-charcoal uppercase tracking-tight mb-3">
                   Tensile Fabric Sails
@@ -517,8 +539,13 @@ export default function HomeView({ setView }: HomeViewProps) {
                   <span>SYS: CAT_03</span>
                   <span>[ CANOPIES ]</span>
                 </div>
-                <div className="w-12 h-12 border border-brand-charcoal/15 flex items-center justify-center mb-8 group-hover:border-brand-blue group-hover:bg-brand-blue/5 transition-colors">
-                  <Award size={16} className="text-brand-charcoal group-hover:text-brand-blue" />
+                <div className="relative overflow-hidden aspect-[4/3] mb-5 bg-white">
+                  <img 
+                    src={homeProductDesc3}
+                    alt="Glazed & Poly Canopies" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <h4 className="font-display font-extrabold text-lg text-brand-charcoal uppercase tracking-tight mb-3">
                   Glazed & Poly Canopies
@@ -544,8 +571,13 @@ export default function HomeView({ setView }: HomeViewProps) {
                   <span>SYS: CAT_04</span>
                   <span>[ GAZ_UMB ]</span>
                 </div>
-                <div className="w-12 h-12 border border-brand-charcoal/15 flex items-center justify-center mb-8 group-hover:border-brand-green group-hover:bg-brand-green/5 transition-colors">
-                  <Shield size={16} className="text-brand-charcoal group-hover:text-[#17be74]" />
+                <div className="relative overflow-hidden aspect-[4/3] mb-5 bg-white">
+                  <img 
+                    src={homeProductDesc4}
+                    alt="Gazebos & Cantilevers" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <h4 className="font-display font-extrabold text-lg text-brand-charcoal uppercase tracking-tight mb-3">
                   Gazebos & Cantilevers
@@ -569,7 +601,148 @@ export default function HomeView({ setView }: HomeViewProps) {
         </div>
       </section>
 
-      {/* 4. Dark Architectural Call-To-Action (CTA) Section */}
+
+      {/* 6. FAQ Section - Redesigned */}
+      <section id="faq-section" className="py-20 lg:py-24 bg-[#0b0301] text-white relative">
+        <div className="max-w-4xl mx-auto px-3 lg:px-6">
+          <div className="text-center mb-16">
+            <span className="font-mono text-xs text-brand-blue font-bold uppercase tracking-widest block mb-4">
+              FAQS
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-black tracking-tight leading-none">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="flex flex-col border-t border-white/10">
+            {HOME_FAQS.map((faq) => {
+              const isOpen = openFAQ === faq.id;
+              return (
+                <div 
+                  key={faq.id} 
+                  className={`border-b border-white/10 transition-all duration-500 overflow-hidden cursor-pointer ${isOpen ? 'bg-white/5' : 'hover:bg-white/5'}`}
+                  onClick={() => setOpenFAQ(isOpen ? null : faq.id)}
+                >
+                  <div className="p-6 md:p-8 flex justify-between items-center gap-4">
+                    <h4 className={`font-display font-bold text-base md:text-xl transition-colors ${isOpen ? 'text-brand-blue' : 'text-white'}`}>
+                      {faq.question}
+                    </h4>
+                    <div className={`w-8 h-8 flex items-center justify-center rounded-full border transition-all ${isOpen ? 'border-brand-blue bg-brand-blue text-white' : 'border-white/20 text-white/50'}`}>
+                      {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                    </div>
+                  </div>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: 'easeInOut' }}
+                      >
+                        <div className="px-6 md:px-8 pb-8 font-sans text-xs md:text-sm text-gray-400 leading-relaxed max-w-3xl">
+                          {faq.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Blog Section */}
+      <section id="blog-section" className="py-20 lg:py-24 bg-white relative">
+        <div className="max-w-7xl mx-auto px-3 lg:px-6 text-center">
+          
+          <span className="font-mono text-xs text-[#17be74] font-bold uppercase tracking-widest block mb-4 border-l-2 border-[#17be74] pl-3 inline-block">
+            News & Blog
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-light text-brand-charcoal tracking-tight leading-none mb-16">
+            Read Our Latest <span className="font-black">News & Blog</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left mb-12">
+            {BLOG_POSTS.map((post) => (
+              <div key={post.id} className="group cursor-pointer">
+                <div className="relative overflow-hidden aspect-[4/3] mb-5 border border-gray-100 p-2 bg-white">
+                  <img 
+                    src={post.imageUrl} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale-60 hover:grayscale-0" 
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute top-4 left-4 bg-brand-blue text-white px-3 py-1 font-mono text-[10px] uppercase font-bold tracking-widest z-10 shadow-sm">
+                    {post.category}
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between font-mono text-[10px] text-gray-400 mb-3 border-b border-gray-100 pb-3">
+                  <span>{post.date}</span>
+                </div>
+                
+                <h4 className="font-display font-bold text-base text-brand-charcoal leading-tight mb-3 group-hover:text-brand-blue transition-colors">
+                  {post.title}
+                </h4>
+                
+                <button className="text-[10px] font-mono text-brand-blue uppercase font-bold tracking-widest inline-flex items-center gap-1 group-hover:text-brand-charcoal transition-colors cursor-pointer">
+                  Read More <ArrowRight size={12} />
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <button
+            className="px-8 py-4 bg-brand-charcoal text-white text-[11px] uppercase font-bold tracking-[0.2em] inline-flex items-center gap-4 hover:bg-brand-blue transition-all cursor-pointer"
+          >
+            View More
+            <svg width="20" height="1" viewBox="0 0 20 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line y1="0.5" x2="20" y2="0.5" stroke="currentColor"/>
+            </svg>
+          </button>
+
+        </div>
+      </section>
+
+      {/* 8. Partner Companies Section */}
+      <section id="partner-companies" className="py-16 bg-brand-light border-y border-gray-200/60 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-3 lg:px-6">
+          <div className="text-center font-mono text-[10px] text-gray-400 uppercase tracking-widest mb-10 font-bold">
+            We've More Than 500+ Clients
+          </div>
+          
+          <div className="relative w-full overflow-hidden flex items-center h-32">
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-brand-light to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-brand-light to-transparent z-10 pointer-events-none"></div>
+            
+            <Swiper
+              modules={[Autoplay]}
+              loop={true}
+              autoplay={{ delay: 0, disableOnInteraction: false }}
+              speed={3000}
+              slidesPerView="auto"
+              allowTouchMove={false}
+              className="w-full flex items-center swiper-linear-transition"
+            >
+              {partnerImages.map((src, index) => (
+                <SwiperSlide key={`${index}`} className="!w-auto flex items-center justify-center mx-[100px] md:mx-[130px]">
+                  <div className="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-16 flex items-center">
+                    <img 
+                      src={src} 
+                      alt="Partner Logo" 
+                      className="h-full w-auto max-w-[180px] object-contain"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Dark Architectural Call-To-Action (CTA) Section */}
       <section id="dark-architect-cta-section" className="py-28 bg-[#0b0301] text-white/95 relative overflow-hidden border-t border-white/5">
         
         {/* Intricate inline SVG Architectural wireframe line art */}
