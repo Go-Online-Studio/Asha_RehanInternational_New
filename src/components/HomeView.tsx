@@ -726,8 +726,8 @@ export default function HomeView({ setView }: HomeViewProps) {
               className="w-full flex items-center swiper-linear-transition"
             >
               {partnerImages.map((src, index) => (
-                <SwiperSlide key={`${index}`} className="!w-auto flex items-center justify-center mx-[100px] md:mx-[130px]">
-                  <div className="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-16 flex items-center">
+                <SwiperSlide key={`${index}`} className="!w-auto flex items-center justify-center mx-4 md:mx-8">
+                  <div className="grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-24 lg:h-30 flex items-center">
                     <img 
                       src={src} 
                       alt="Partner Logo" 
